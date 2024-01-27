@@ -1,17 +1,24 @@
+import { getUserLocation } from "@/lib/helper";
 import React, { useEffect, useState } from "react";
 
 function TopHeadingBarStrip() {
-  // const [add,setAdd] = useState('')
-  // useEffect(() => {
-  //   navigator.geolocation.getCurrentPosition((pos) => {
-  //     const { latitude, longitude } = pos.coords;
-  //     console.log(latitude, longitude);
-  //     const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
-  //     fetch(url)
-  //       .then((res) => res.json())
-  //       .then((data) => console.log(data.address, "???"));
-  //   });
-  // }, []);
+  const [userLocation, setUserLocation] = useState<any>("");
+  const currentDate = new Date();
+  const options:any = { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' };
+  const formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+
+  useEffect(() => {
+    getUserLocation()
+      .then((location: any) => {
+        setUserLocation(location);
+      })
+      .catch((error) => {
+        console.error("Error getting user location:", error);
+      });
+  }, []);
+  console.log(userLocation, "userLocation");
+
   return (
     <>
       <div className="top-bar-top bg-primarytextcolor ">
@@ -21,11 +28,11 @@ function TopHeadingBarStrip() {
               <ul className="news-info-list text-center--md">
                 <li>
                   <i className="fa fa-map-marker" aria-hidden="true"></i>
-                  Australia
+                  {userLocation?.country || "India"}
                 </li>
                 <li>
                   <i className="fa fa-calendar" aria-hidden="true"></i>
-                  <span id="current_date"></span>
+                  <span id="current_date">{formattedDate}</span>
                 </li>
                 <li>
                   <i className="fa fa-clock-o" aria-hidden="true"></i>Last
@@ -33,7 +40,7 @@ function TopHeadingBarStrip() {
                 </li>
                 <li>
                   <i className="fa fa-cloud" aria-hidden="true"></i>
-                  29&#8451; Sydney, Australia
+                  {userLocation?.city || ""}
                 </li>
               </ul>
             </div>
