@@ -14,7 +14,7 @@ function Layout({ children }: any) {
       <Header onSideMenuOpenClose={onSideMenuOpenClose} />
       {children}
       <Footer />
-      <SideMenus />
+      <SideMenus isMenuOpen={isMenuOpen} onSideMenuOpenClose={onSideMenuOpenClose} />
     </>
   );
 }

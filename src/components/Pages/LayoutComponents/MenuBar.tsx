@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function MenuBar({onSideMenuOpenClose}:any) {
+function MenuBar({ onSideMenuOpenClose }: any) {
   const handleScroll = () => {
     const stickerElement = document.getElementById("sticker");
     const headerLayout2 = document.getElementById("header-layout2");
@@ -184,6 +184,7 @@ function MenuBar({onSideMenuOpenClose}:any) {
                     </li>
                     <li>
                       <div
+                        onClick={onSideMenuOpenClose}
                         id="side-menu-trigger"
                         className="offcanvas-menu-btn offcanvas-btn-repoint"
                       >
