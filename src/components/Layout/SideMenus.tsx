@@ -1,14 +1,15 @@
 import React from "react";
 
-function SideMenus() {
+function SideMenus({ isMenuOpen, onSideMenuOpenClose }: any) {
   return (
     <>
       <div
         id="offcanvas-body-wrapper"
         className="offcanvas-body-wrapper"
-        // style={{ right: 0 }}
+        style={{ right: isMenuOpen ? 0 : "" }}
       >
         <div
+          onClick={onSideMenuOpenClose}
           id="offcanvas-nav-close"
           className="offcanvas-nav-close offcanvas-menu-btn"
         >

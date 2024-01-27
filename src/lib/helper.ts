@@ -1,15 +1,22 @@
-export const getCurrentLocation = () => {
+// geolocation.js
+export const getUserLocation = () => {
   return new Promise((resolve, reject) => {
-    if (navigator.geolocation) {
+    if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          console.log(latitude);
-          
-          resolve({ latitude, longitude });
+        (pos) => {
+          const { latitude, longitude } = pos.coords;
+          const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
+          fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+              resolve(data.address);
+            })
+            .catch((error) => {
+              reject(error);
+            });
         },
         (error) => {
-          reject(error.message);
+          reject(error);
         }
       );
     } else {

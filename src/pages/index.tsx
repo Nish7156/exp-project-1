@@ -7,19 +7,17 @@ import MoreNews from "@/components/Home/MoreNews";
 import LatestedBottomNews from "@/components/Home/LatestedBottomNews";
 import PageBase from "@/components/Layout/PageBase";
 
-
 export default function Home() {
   return (
     <>
-    <PageBase title="nishant" description="test">
-      hiiii
-    </PageBase>
-      {/* <NewsFeed />
-      <NewsAdsBanners />
-      <TopStoriesArea />
-      <VideoArea />
-      <MoreNews />
-      <LatestedBottomNews /> */}
+      <PageBase title="nishant" description="test">
+        <NewsFeed />
+        <NewsAdsBanners />
+        <TopStoriesArea />
+        <VideoArea />
+        <MoreNews />
+        <LatestedBottomNews />
+      </PageBase>
     </>
   );
 }
