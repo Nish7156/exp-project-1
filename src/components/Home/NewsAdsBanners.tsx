@@ -1,4 +1,5 @@
 import React from "react";
+import CustomImage from "../elements/CustomImage";
 
 function NewsAdsBanners() {
   return (
@@ -8,10 +9,10 @@ function NewsAdsBanners() {
           <div className="row no-gutters">
             <div className="col-lg-6 col-md-12">
               <div className="img-scale-animate">
-                <img
-                  src="img/news/news128.jpg"
+                <CustomImage
+                  src={"/img/news/news128.jpg"}
+                  customClass="img-fluid width-100"
                   alt="news"
-                  className="img-fluid width-100"
                 />
                 <div className="mask-content-v-center">
                   <div className="topic-box-sm color-white mb-20">
@@ -27,10 +28,10 @@ function NewsAdsBanners() {
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6 col-12">
               <div className="img-scale-animate">
-                <img
-                  src="img/news/news129.jpg"
+                <CustomImage
+                  src={"/img/news/news129.jpg"}
+                  customClass="img-fluid width-100"
                   alt="news"
-                  className="img-fluid width-100"
                 />
                 <div className="mask-content-top-left">
                   <div className="topic-box-sm color-white mb-20">Apple</div>
@@ -44,10 +45,10 @@ function NewsAdsBanners() {
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6 col-12">
               <div className="img-scale-animate position-relative">
-                <img
-                  src="img/news/news130.jpg"
+                <CustomImage
+                  src={"/img/news/news130.jpg"}
+                  customClass="img-fluid width-100"
                   alt="news"
-                  className="img-fluid width-100"
                 />
                 <div className="mask-content-top-left">
                   <div className="topic-box-sm color-white mb-20">

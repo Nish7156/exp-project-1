@@ -51,6 +51,8 @@ export default function Seo(props: SeoProps) {
     ? `${props.title} | ${meta.siteName}`
     : meta.title;
   meta.description = props.description || meta.description;
+  meta.image;
+  meta.url
   return (
     <>
       <Head>

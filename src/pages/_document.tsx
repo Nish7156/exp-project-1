@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
 
 export default function Document() {
   return (
@@ -16,29 +15,10 @@ export default function Document() {
           integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
           crossOrigin="anonymous"
         ></script>
-        <link rel="stylesheet" href="../styles/css/normalize.css" />
-        <link rel="stylesheet" href="../styles/css/main.css" />
-        <link rel="stylesheet" href="../styles/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="../styles/css/animate.min.css" />
-        <link rel="stylesheet" href="../styles/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="vendor/OwlCarousel/owl.carousel.min.css" />
-        <link
-          rel="stylesheet"
-          href="vendor/OwlCarousel/owl.theme.default.min.css"
-        />
-        <link rel="stylesheet" href="css/meanmenu.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/magnific-popup.css" />
-        <link rel="stylesheet" href="css/hover-min.css" />
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" type="text/css" href="css/ie-only.css" />
       </Head>
       <body>
         <Main />
-        <NextScript>
-          <Script async src="../js/main.js" />
-          <Script async src="../js/ticker.js" />
-          <Script async src="js/modernizr-2.8.3.min.js" />
-        </NextScript>
+        <NextScript />
       </body>
     </Html>
   );
