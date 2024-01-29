@@ -9,8 +9,8 @@ html {
   }
 }
 body {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 16px !important;
+  line-height: 24px !important;
   font-family: "Open Sans", sans-serif;
   vertical-align: baseline;
   background-color: #e6e8eb;
@@ -23,9 +23,9 @@ h1,
 h2,
 h3,
 h4 {
-  line-height: 1.4;
+  line-height: 1.4 !important;
   font-family: Roboto, sans-serif;
-  margin: 0 0 20px;
+  margin: 0 0 20px !important;
   color: #111;
   text-transform: capitalize;
 }
